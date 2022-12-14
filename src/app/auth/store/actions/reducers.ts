@@ -1,6 +1,6 @@
-import {AuthStateInterface} from '../types/authState.interface';
-import {Action, createReducer, on} from '@ngrx/store';
-import {registerAction} from 'src/app/auth/store/actions';
+import { AuthStateInterface } from '../../types/authState.interface';
+import { Action, createReducer, on } from '@ngrx/store';
+import { registerAction, registerFailureAction, registerSuccessAction } from 'src/app/auth/store/actions/register.action';
 
 const initalState: AuthStateInterface = {
 	isSubmitting: false
@@ -9,10 +9,10 @@ const initalState: AuthStateInterface = {
 /*
 * initialState - Provides a state value if the current state is undefined, as it is initially.
 * on(
-    featureActions.actionOne,
-    featureActions.actionTwo,
-    (state, { updatedValue }) => ({ ...state, prop: updatedValue })
-  )
+		featureActions.actionOne,
+		featureActions.actionTwo,
+		(state, { updatedValue }) => ({ ...state, prop: updatedValue })
+	)
 */
 
 export const authReducer = createReducer(
@@ -22,7 +22,22 @@ export const authReducer = createReducer(
 		(state): AuthStateInterface => ({
 			...state,
 			isSubmitting: true
-		})));
+		})),
+	on(
+		registerFailureAction,
+		(state): AuthStateInterface => ({
+			...state,
+			isSubmitting: false
+		})
+	),
+	on(
+		registerSuccessAction,
+		(state): AuthStateInterface => ({
+			...state,
+			isSubmitting: false
+		})
+	)
+);
 
 /*
 Note: The exported reducer function is no longer required if you use the default

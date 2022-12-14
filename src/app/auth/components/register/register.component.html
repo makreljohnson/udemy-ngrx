@@ -1,34 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Register</title>
 </head>
+
 <body>
-<div class="auth-page">
-    <div class="container page">
-        <div class="row">
-            <div class="col-md-6 offset-md-3 col-xs-12">
-                <h1 class="text-xs-center">Sign up</h1>
-                <p class="text-xs-center">
-                    <a [routerLink]="['/login']">Have an account?</a>
-                </p>
-                <i>Backend Errors Here</i>
-                <form [formGroup]="form" (ngSubmit)="onSubmit()">
-                    <fieldset>
-                        <fieldset class="form-group">
-                            <input class="form-control form-control-lg " formControlName="username" placeholder="Username" type="text"></fieldset>
-                        <fieldset class="form-group">
-                            <input class="form-control form-control-lg" formControlName="email" placeholder="Email"
-                                   type="text"></fieldset>
-                        <fieldset class="form-group">
-                            <input class="form-control form-control-lg" formControlName="password" placeholder="Password" type="password"></fieldset>
-                        <button class="btn btn-lg btn-primary pull-xs-right" type="submit"> Sign up</button>
-                    </fieldset>
-                </form>
+    <div class="auth-page">
+        <div class="container page">
+            <div class="row">
+                <div class="col-md-6 offset-md-3 col-xs-12">
+                    <h1 class="text-xs-center">Sign up</h1>
+                    <p class="text-xs-center">
+                        <a [routerLink]="['/login']">Have an account?</a>
+                    </p>
+                    <i>Backend Errors Here</i>
+                    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+                        <fieldset>
+                            <fieldset class="form-group">
+                                <input class="form-control form-control-lg " formControlName="username"
+                                    placeholder="Username" type="text">
+                            </fieldset>
+                            <fieldset class="form-group">
+                                <input class="form-control form-control-lg" formControlName="email" placeholder="Email"
+                                    type="text">
+                            </fieldset>
+                            <fieldset class="form-group">
+                                <input class="form-control form-control-lg" formControlName="password"
+                                    placeholder="Password" type="password">
+                            </fieldset>
+                            <button class="btn btn-lg btn-primary pull-xs-right" type="submit"
+                            [disabled]="isSubmitting$ | async"> Sign up</button>
+                        </fieldset>
+                    </form>
+                </div>
             </div>
         </div>
     </div>
-</div>
 </body>
+
 </html>
