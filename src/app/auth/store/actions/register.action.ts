@@ -2,6 +2,7 @@ import {createAction, props} from '@ngrx/store';
 import {ActionTypes} from './actionTypes';
 import {RegisterRequestInterface} from '../../types/registerRequest.interface';
 import { CurrentUserInterface } from 'src/app/shared/types/currentUser.interface';
+import {BackendErrorsInterface} from '../../types/backendErrors.interface';
 
 export const registerAction = createAction(
 	ActionTypes.REGISTER,
@@ -15,7 +16,8 @@ export const registerAction = createAction(
 * This behaviour is difficult to debug. In the case with props I see that
 * it's an input and never mutate it (exactly like in Vue and React)
 
-	a strongly typed props function takes care of adding properties without old fashioned payload
+	a strongly typed props function takes care of adding properties without
+	* old-fashioned payload
 */
 
 export const registerSuccessAction = createAction(
@@ -24,5 +26,6 @@ export const registerSuccessAction = createAction(
 )
 
 export const registerFailureAction = createAction(
-	ActionTypes.REGISTER_FAILURE
+	ActionTypes.REGISTER_FAILURE,
+	props<{errors:BackendErrorsInterface}>()
 )

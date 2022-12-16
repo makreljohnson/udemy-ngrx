@@ -1,6 +1,6 @@
-import { createSelector } from "@ngrx/store";
-import { AppStateInterface } from "../../types/appState.interface";
-import { AuthStateInterface } from "../../types/authState.interface";
+import {createSelector} from '@ngrx/store';
+import {AppStateInterface} from '../../types/appState.interface';
+import {AuthStateInterface} from '../../types/authState.interface';
 
 export const authFeatureSelector = (state: AppStateInterface): AuthStateInterface => state.auth;
 
@@ -10,6 +10,11 @@ Using interfaces helps keep the type of state you're asking for clear.
 ex: authState is an object with isSubmitting prop taht is a bool 
 */
 export const isSubmittingSelector = createSelector(
-  authFeatureSelector,
-  (authState: AuthStateInterface) => authState.isSubmitting
-)
+	authFeatureSelector,
+	(authState: AuthStateInterface) => authState.isSubmitting
+);
+
+export const validationErrorsSelector = createSelector(
+	authFeatureSelector,
+	(authState: AuthStateInterface) => authState.validationErrors
+);

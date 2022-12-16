@@ -1,9 +1,12 @@
-import { AuthStateInterface } from '../../types/authState.interface';
-import { Action, createReducer, on } from '@ngrx/store';
-import { registerAction, registerFailureAction, registerSuccessAction } from 'src/app/auth/store/actions/register.action';
+import {AuthStateInterface} from '../../types/authState.interface';
+import {Action, createReducer, on} from '@ngrx/store';
+import {registerAction, registerFailureAction, registerSuccessAction} from 'src/app/auth/store/actions/register.action';
 
 const initalState: AuthStateInterface = {
-	isSubmitting: false
+	isSubmitting: false,
+	currentUser: null,
+	isLoggedIn: null,
+	validationErrors: null
 };
 
 /*
@@ -21,30 +24,41 @@ export const authReducer = createReducer(
 		registerAction,
 		(state): AuthStateInterface => ({
 			...state,
-			isSubmitting: true
+			isSubmitting: true,
+			currentUser: null,
+			isLoggedIn: null,
+			validationErrors: null
 		})),
 	on(
-		registerFailureAction,
-		(state): AuthStateInterface => ({
+		registerSuccessAction,
+		(state, action): AuthStateInterface => ({
 			...state,
-			isSubmitting: false
+			isSubmitting: false,
+			currentUser: action.currentUser,
+			isLoggedIn: null
 		})
 	),
 	on(
-		registerSuccessAction,
-		(state): AuthStateInterface => ({
+		registerFailureAction,
+		(state, action): AuthStateInterface => ({
 			...state,
-			isSubmitting: false
+			isSubmitting: false,
+			validationErrors: action.errors
 		})
-	)
+	),
 );
+/*
+* NOTE - to get access to the action payload, you need to add action to the incoming data,
+* right where state is brought in, THEREFORE (state) becomes (state, action)
+*/
 
 /*
-Note: The exported reducer function is no longer required if you use the default
-Ivy AOT compiler (or JIT). It is only necessary with the View Engine AOT compiler
-as function calls are not supported there.
+* Note: The exported reducer function is no longer required if you use the default
+* Ivy AOT compiler (or JIT). It is only necessary with the View Engine AOT compiler
+* as function calls are not supported there.
 
 export function reducers(state: AuthStateInterface, action: Action){
 	return authReducer(state, action);
 }
 */
+

@@ -9,6 +9,7 @@ import { AuthService } from 'src/app/auth/services/auth.services';
 import { HttpClientModule } from '@angular/common/http';
 import { EffectsModule } from '@ngrx/effects';
 import { RegisterEffect } from 'src/app/auth/effects/register.effect';
+import {BackendErrorMessagesModule} from '../shared/modules/backend-error-messages/backend-error-messages.module';
 
 const routes = [
 	{
@@ -26,7 +27,8 @@ and pass routes up to the app-routing-module */
 		RouterModule.forChild(routes),
 		ReactiveFormsModule,
 		StoreModule.forFeature('auth', authReducer),
-		EffectsModule.forFeature([RegisterEffect])
+		EffectsModule.forFeature([RegisterEffect]),
+		BackendErrorMessagesModule
 	],
 	declarations: [RegisterComponent],
 	providers:[AuthService]

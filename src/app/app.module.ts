@@ -18,7 +18,7 @@ import { EffectsModule } from '@ngrx/effects';
 		AuthModule,
 		StoreModule.forRoot({}, {}),
 		StoreDevtoolsModule.instrument({maxAge: 25, logOnly: environment.production}),
-		EffectsModule.forRoot([]),
+		EffectsModule.forRoot([])
 	],
 	providers: [],
 	bootstrap: [AppComponent]
