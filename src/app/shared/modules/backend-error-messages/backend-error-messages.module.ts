@@ -8,9 +8,17 @@ import {BackendErrorsInterface} from '../../../auth/types/backendErrors.interfac
 	declarations: [
 		BackendErrorMessagesComponent
 	],
+	exports: [
+		BackendErrorMessagesComponent
+	],
 	imports: [
 		CommonModule
 	]
 })
+/*
+* By re-exporting BackendErrorMessagesComponent, any other
+* module that imports this SharedModule, gets access.
+* Not doing this caused error with mc-backend-error-messages Input prop
+* */
 export class BackendErrorMessagesModule {
 }
