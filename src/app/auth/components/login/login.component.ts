@@ -3,7 +3,7 @@ import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {Observable} from 'rxjs';
 import {BackendErrorsInterface} from 'src/app/auth/types/backendErrors.interface';
 import {select, Store} from '@ngrx/store';
-import {isSubmittingSelector, validationErrorsSelector} from 'src/app/auth/store/actions/selectors';
+import {isSubmittingSelector, validationErrorsSelector} from 'src/app/auth/store/selectors/selectors';
 import {loginAction} from 'src/app/auth/store/actions/login.action';
 import {LoginRequestInterface} from 'src/app/auth/types/loginRequest.interface';
 

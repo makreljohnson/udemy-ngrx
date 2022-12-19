@@ -60,7 +60,7 @@ export const authReducer = createReducer(
 			...state,
 			isSubmitting: false,
 			currentUser: action.currentUser,
-			isLoggedIn: null
+			isLoggedIn: true
 		})
 	),
 	on(
