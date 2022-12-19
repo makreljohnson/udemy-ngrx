@@ -9,13 +9,19 @@ import {AuthService} from 'src/app/auth/services/auth.services';
 import {HttpClientModule} from '@angular/common/http';
 import {EffectsModule} from '@ngrx/effects';
 import {RegisterEffect} from 'src/app/auth/effects/register.effect';
-import {BackendErrorMessagesModule} from '../shared/modules/backend-error-messages/backend-error-messages.module';
-import {PersistenceService} from '../shared/services/persistence.service';
+import {BackendErrorMessagesModule} from 'src/app/shared/modules/backend-error-messages/backend-error-messages.module';
+import {PersistenceService} from 'src/app/shared/services/persistence.service';
+import { LoginComponent } from 'src/app/auth/components/login/login.component';
+import {LoginEffect} from 'src/app/auth/effects/login.effect';
 
 const routes = [
 	{
 		path: 'register',
 		component: RegisterComponent
+	},
+	{
+		path: 'login',
+		component: LoginComponent
 	}
 ];
 
@@ -28,10 +34,10 @@ and pass routes up to the app-routing-module */
 		RouterModule.forChild(routes),
 		ReactiveFormsModule,
 		StoreModule.forFeature('auth', authReducer),
-		EffectsModule.forFeature([RegisterEffect]),
+		EffectsModule.forFeature([RegisterEffect, LoginEffect]),
 		BackendErrorMessagesModule
 	],
-	declarations: [RegisterComponent],
+	declarations: [RegisterComponent, LoginComponent],
 	providers: [AuthService, PersistenceService]
 })
 export class AuthModule {

@@ -1,6 +1,7 @@
-import {AuthStateInterface} from '../../types/authState.interface';
-import {Action, createReducer, on} from '@ngrx/store';
+import {AuthStateInterface} from 'src/app/auth/types/authState.interface';
+import {createReducer, on} from '@ngrx/store';
 import {registerAction, registerFailureAction, registerSuccessAction} from 'src/app/auth/store/actions/register.action';
+import {loginAction, loginFailureAction, loginSuccessAction} from 'src/app/auth/store/actions/login.action';
 
 const initalState: AuthStateInterface = {
 	isSubmitting: false,
@@ -46,6 +47,30 @@ export const authReducer = createReducer(
 			validationErrors: action.errors
 		})
 	),
+	on(
+		loginAction,
+		(state): AuthStateInterface => ({
+			...state,
+			isSubmitting: true,
+			validationErrors: null
+		})),
+	on(
+		loginSuccessAction,
+		(state, action): AuthStateInterface => ({
+			...state,
+			isSubmitting: false,
+			currentUser: action.currentUser,
+			isLoggedIn: null
+		})
+	),
+	on(
+		loginFailureAction,
+		(state, action): AuthStateInterface => ({
+			...state,
+			isSubmitting: false,
+			validationErrors: action.errors
+		})
+	)
 );
 /*
 * NOTE - to get access to the action payload, you need to add action to the incoming data,

@@ -35,7 +35,6 @@ export class RegisterEffect {
 			ofType(registerSuccessAction),
 			tap(() => {
 				/* tap doesn't need to return like the maps */
-				console.log('REDIRECT');
 				this.router.navigateByUrl('/');
 			})
 		),
