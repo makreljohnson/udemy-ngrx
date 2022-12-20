@@ -14,7 +14,7 @@ export class GetCurrentUserEffect {
 		this.actions$.pipe(
 			ofType(getCurrentUserAction),
 			switchMap(() => {
-				const token = this.percyService.get('acessToken');
+				const token = this.percyService.get('accessToken');
 
 				/* if this fails return failure and stop processing */
 				if (!token) {
