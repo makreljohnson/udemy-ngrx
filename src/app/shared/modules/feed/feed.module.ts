@@ -23,5 +23,4 @@ import {feedReducer} from 'src/app/shared/modules/feed/store/reducers/feed.reduc
 		FeedService
 	]
 })
-export class FeedModule {
-}
+export class FeedModule {}

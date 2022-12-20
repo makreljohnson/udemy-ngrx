@@ -4,7 +4,7 @@ import {registerAction, registerFailureAction, registerSuccessAction} from 'src/
 import {loginAction, loginFailureAction, loginSuccessAction} from 'src/app/auth/store/actions/login.action';
 import {getCurrentUserAction, getCurrentUserFailureAction, getCurrentUserSuccessAction} from '../actions/getCurrentuser.action';
 
-const initalState: AuthStateInterface = {
+const initialState: AuthStateInterface = {
 	isSubmitting: false,
 	currentUser: null,
 	isLoggedIn: null,
@@ -22,7 +22,7 @@ const initalState: AuthStateInterface = {
 */
 
 export const authReducer = createReducer(
-	initalState,
+	initialState,
 	on(
 		registerAction,
 		(state): AuthStateInterface => ({

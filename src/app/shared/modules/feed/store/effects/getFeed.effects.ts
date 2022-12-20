@@ -8,6 +8,8 @@ import {getFeedAction, getFeedFailureAction, getFeedSuccessAction} from 'src/app
 /* HEY - don't forget to register this in the module! */
 @Injectable()
 export class GetFeedEffect {
+	constructor(private actions$: Actions, private feedSVC: FeedService) {
+	}
 
 	getFeed$ = createEffect(() =>
 		this.actions$.pipe(
@@ -25,7 +27,4 @@ export class GetFeedEffect {
 			})
 		)
 	);
-
-	constructor(private actions$: Actions, private feedSVC: FeedService) {
-	}
 }

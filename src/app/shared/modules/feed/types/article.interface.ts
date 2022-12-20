@@ -1,7 +1,6 @@
-import {AuthorInterface} from 'src/app/shared/types/author.interface';
+import {ProfileInterface} from 'src/app/shared/types/profile.Interface';
 
 export interface ArticleInterface {
-
 	slug: string,
 	title: string,
 	description: string,
@@ -11,5 +10,5 @@ export interface ArticleInterface {
 	updatedAt: string,
 	favorited: boolean,
 	favoritesCount: number,
-	author: AuthorInterface
+	author: ProfileInterface
 }
