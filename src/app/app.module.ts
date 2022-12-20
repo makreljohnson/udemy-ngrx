@@ -11,16 +11,18 @@ import {TopBarModule} from 'src/app/shared/modules/top-bar/top-bar.module';
 import {AuthInterceptorService} from 'src/app/shared/services/auth-interceptor.service';
 import {PersistenceService} from 'src/app/shared/services/persistence.service';
 import {HTTP_INTERCEPTORS} from '@angular/common/http';
+import {GlobalFeedModule} from './shared/global-feed/global-feed.module';
 
 @NgModule({
 	declarations: [
-		AppComponent
+		AppComponent,
 	],
 	imports: [
 		BrowserModule,
 		AppRoutingModule,
 		AuthModule,
 		TopBarModule,
+		GlobalFeedModule,
 		StoreModule.forRoot({}, {}),
 		StoreDevtoolsModule.instrument({maxAge: 25, logOnly: environment.production}),
 		EffectsModule.forRoot([])

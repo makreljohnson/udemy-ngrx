@@ -1,0 +1,31 @@
+import {Injectable} from '@angular/core';
+import {Actions, createEffect, ofType} from '@ngrx/effects';
+import {catchError, map, of, switchMap} from 'rxjs';
+import {FeedService} from 'src/app/shared/modules/feed/services/feed.service';
+import {GetFeedResponseInterface} from 'src/app/shared/modules/feed/types/getFeedResponse.interface';
+import {getFeedAction, getFeedFailureAction, getFeedSuccessAction} from 'src/app/shared/modules/feed/store/actions/getFeed.action';
+
+/* HEY - don't forget to register this in the module! */
+@Injectable()
+export class GetFeedEffect {
+
+	getFeed$ = createEffect(() =>
+		this.actions$.pipe(
+			ofType(getFeedAction),
+			switchMap(({url}) => {
+				/*note: url is projected from the action props */
+				return this.feedSVC.getFeed(url).pipe(
+					map((feed: GetFeedResponseInterface) => {
+						return getFeedSuccessAction({feed});
+					}),
+					catchError(() => {
+						return of(getFeedFailureAction());
+					})
+				);
+			})
+		)
+	);
+
+	constructor(private actions$: Actions, private feedSVC: FeedService) {
+	}
+}
