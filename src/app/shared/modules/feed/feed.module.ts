@@ -7,8 +7,6 @@ import {StoreModule} from '@ngrx/store';
 import {feedReducer} from 'src/app/shared/modules/feed/store/reducers/feed.reducers';
 import {FeedComponent} from './components/feed/feed.component';
 import {RouterModule} from '@angular/router';
-import {StoreDevtoolsModule} from '@ngrx/store-devtools';
-import {environment} from '../../../../environments/environment';
 
 @NgModule({
 	declarations: [
