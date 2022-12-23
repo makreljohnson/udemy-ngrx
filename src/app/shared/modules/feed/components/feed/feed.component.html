@@ -1,27 +1,33 @@
-<div *ngIf="isLoading$ | async ">Loading...</div>
-<div *ngIf="error$ | async ">An error occurred...</div>
+<mc-loading *ngIf="isLoading$ | async"></mc-loading>
+<mc-error-message *ngIf="error$ | async"></mc-error-message>
 <div *ngIf="feed$ | async ">
-    <div class="article-preview" *ngFor="let article of (feed$|async)?.articles">
-        <div class="article-meta">
-            <a [routerLink]="['/profiles', article.author.username]">
-                <img [src]="article.author.image"/>
-            </a>
-            <div class="info">
-                <a [routerLink]="['/profiles', article.author.username]" class="author">
-                    {{article.author.username}}
-                </a>
-                <span class="date">{{article.createdAt}}</span>
-            </div>
-            <div class="pull-xs-right">FAVE</div>
-        </div>
-        <a [routerLink]="['/articles', article.slug]" class="preview-link">
-            <h1>{{article.title}}</h1>
-            <p>{{article.description}}</p>
-            <span>READ MORE...</span>
-            TAG-LIST
-        </a>
-    </div>
-    PAGER HERE
+	<div class="article-preview" *ngFor="let article of (feed$|async)?.articles">
+		<div class="article-meta">
+			<a [routerLink]="['/profiles', article.author.username]">
+				<img [src]="article.author.image"/>
+			</a>
+			<div class="info">
+				<a [routerLink]="['/profiles', article.author.username]" class="author">
+					{{article.author.username}}
+				</a>
+				<span class="date">{{article.createdAt}}</span>
+			</div>
+			<div class="pull-xs-right">FAVE</div>
+		</div>
+		<a [routerLink]="['/articles', article.slug]" class="preview-link">
+			<h1>{{article.title}}</h1>
+			<p>{{article.description}}</p>
+			<span>READ MORE...</span>
+			TAG-LIST
+		</a>
+	</div>
+	<mc-pager
+			[total]="(feed$|async)?.articlesCount"
+			[limit]="limit"
+			[url]="baseUrl"
+			[currentPage]="currentPage"
+	></mc-pager>
+
 </div>
 
 <!--<pre>
