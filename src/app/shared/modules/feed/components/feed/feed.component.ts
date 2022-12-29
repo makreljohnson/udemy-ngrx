@@ -6,6 +6,7 @@ import {Observable, Subscription} from 'rxjs';
 import {errorSelector, feedSelector, isLoadingSelector} from 'src/app/shared/modules/feed/store/selectors/selectors';
 import {environment} from 'src/environments/environment';
 import {ActivatedRoute, Params, Router} from '@angular/router';
+import queryString from 'query-string';
 
 @Component({
 	selector: 'mc-feed',
@@ -49,7 +50,6 @@ export class FeedComponent implements OnInit, OnDestroy {
 		unsubscribed. | async in the template does it automatically */
 		this.queryParamsSub = this.route.queryParams.subscribe(
 			(params: Params) => {
-				debugger
 				this.currentPage = Number(params['page'] || '1');
 			});
 
@@ -58,9 +58,15 @@ export class FeedComponent implements OnInit, OnDestroy {
 	fetchData() {
 		/* 1*10-10 = 0 and 2*10-10 = 10 and so on... */
 		const offset = this.currentPage * this.limit - this.limit;
-
+		const parsedURL = queryString.parseUrl(this.apiURLProps);
+		const stringifiedParams = queryString.stringify({
+			limit: this.limit,
+			offset,
+			...parsedURL.query
+		});
+		const apiURLWithParams = `${parsedURL.url}?${stringifiedParams}`;
 		this.store.dispatch(
-			getFeedAction({url: this.apiURLProps})
+			getFeedAction({url: apiURLWithParams})
 		);
 	}
 

@@ -3,6 +3,7 @@ import {FeedStateInterface}
 import {createReducer, on} from '@ngrx/store';
 import {getFeedAction, getFeedFailureAction, getFeedSuccessAction}
 	from 'src/app/shared/modules/feed/store/actions/getFeed.action';
+import {routerNavigatedAction} from '@ngrx/router-store';
 
 const initialState: FeedStateInterface = {
 	isLoading: false,
@@ -33,5 +34,13 @@ export const feedReducer = createReducer(
 			...state,
 			isLoading: false
 		})
+	), on(
+		/*
+		During navigation, before any guards or resolvers run,
+		the router will dispatch a ROUTER_NAVIGATION action.
+		https://ngrx.io/guide/router-store/actions
+		*/
+		routerNavigatedAction,
+		(): FeedStateInterface => initialState
 	),
 );
