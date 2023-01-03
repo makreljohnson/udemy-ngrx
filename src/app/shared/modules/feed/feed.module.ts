@@ -8,9 +8,11 @@ import {feedReducer} from 'src/app/shared/modules/feed/store/reducers/feed.reduc
 import {FeedComponent} from 'src/app/shared/modules/feed/components/feed/feed.component';
 import {RouterModule} from '@angular/router';
 import {BannerModule} from 'src/app/shared/modules/banner/banner.module';
-import {LoadingModule} from '../loading/loading.module';
-import {ErrorMessageModule} from '../errorMessage/errorMessage.module';
-import {PagerModule} from '../pager/pager.module';
+import {LoadingModule} from 'src/app/shared/modules/loading/loading.module';
+import {ErrorMessageModule} from 'src/app/shared/modules/errorMessage/errorMessage.module';
+import {PagerModule} from 'src/app/shared/modules/pager/pager.module';
+import {TagListModule} from 'src/app/shared/modules/tag-list/tag-list.module';
+
 
 @NgModule({
 	declarations: [
@@ -24,7 +26,8 @@ import {PagerModule} from '../pager/pager.module';
 		BannerModule,
 		LoadingModule,
 		ErrorMessageModule,
-		PagerModule
+		PagerModule,
+		TagListModule
 	],
 	exports: [
 		FeedComponent

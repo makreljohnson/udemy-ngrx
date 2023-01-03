@@ -27,7 +27,7 @@ import {routerReducer, StoreRouterConnectingModule} from '@ngrx/router-store';
 		StoreModule.forRoot({router: routerReducer}, {}),
 		StoreDevtoolsModule.instrument({maxAge: 25, logOnly: environment.production}),
 		EffectsModule.forRoot([]),
-		StoreRouterConnectingModule.forRoot()
+		StoreRouterConnectingModule.forRoot() /*Connects StoreModule to Angular Router*/
 	],
 	providers: [
 		PersistenceService,
