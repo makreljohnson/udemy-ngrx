@@ -14,7 +14,7 @@ import queryString from 'query-string';
 	styleUrls: ['./feed.component.scss']
 })
 export class FeedComponent implements OnInit, OnDestroy {
-	@Input('apiUrl') apiURLProps: string;
+	@Input('apiUrl') apiUrlProps: string;
 
 	feed$: Observable<GetFeedResponseInterface | null>;
 	error$: Observable<string | null>;
@@ -29,15 +29,15 @@ export class FeedComponent implements OnInit, OnDestroy {
 
 	ngOnInit(): void {
 		/*this.store.dispatch(
-			getFeedAction({url: this.apiURLProps})
+			getFeedAction({url: this.apiUrlProps})
 		);*/
 		this.initializeValues();
 		this.initializeListeners();
-		this.fetchData();
+		this.fetchFeed();
 
 	}
 
-	initializeValues() {
+	initializeValues(): void {
 		this.feed$ = this.store.pipe(select(feedSelector));
 		this.error$ = this.store.pipe(select(errorSelector));
 		this.isLoading$ = this.store.pipe(select(isLoadingSelector));
@@ -46,28 +46,29 @@ export class FeedComponent implements OnInit, OnDestroy {
 	}
 
 	initializeListeners(): void {
-		/*Note: queryParamsSub variable is created so that it can be
-		unsubscribed. | async in the template does it automatically */
+		/*Note: a queryParamsSub variable is created so that it can be
+		unsubscribed. when accessed in the template with async, it un-subs automatically */
 		this.queryParamsSub = this.route.queryParams.subscribe(
 			(params: Params) => {
 				this.currentPage = Number(params['page'] || '1');
+				this.fetchFeed()
 			});
 
 	}
 
-	fetchData() {
+
+	fetchFeed(): void {
 		/* 1*10-10 = 0 and 2*10-10 = 10 and so on... */
 		const offset = this.currentPage * this.limit - this.limit;
-		const parsedURL = queryString.parseUrl(this.apiURLProps);
+		const parsedURL = queryString.parseUrl(this.apiUrlProps);
 		const stringifiedParams = queryString.stringify({
 			limit: this.limit,
 			offset,
 			...parsedURL.query
 		});
-		const apiURLWithParams = `${parsedURL.url}?${stringifiedParams}`;
-		this.store.dispatch(
-			getFeedAction({url: apiURLWithParams})
-		);
+		const apiUrlWithParams = `${parsedURL.url}?${stringifiedParams}`;
+		console.log('apiUrlWithParams', apiUrlWithParams)
+		this.store.dispatch(getFeedAction({url: apiUrlWithParams}));
 	}
 
 	ngOnDestroy(): void {
