@@ -67,7 +67,6 @@ export class FeedComponent implements OnInit, OnDestroy {
 			...parsedURL.query
 		});
 		const apiUrlWithParams = `${parsedURL.url}?${stringifiedParams}`;
-		console.log('apiUrlWithParams', apiUrlWithParams)
 		this.store.dispatch(getFeedAction({url: apiUrlWithParams}));
 	}
 

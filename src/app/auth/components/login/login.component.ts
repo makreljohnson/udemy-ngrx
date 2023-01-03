@@ -29,8 +29,6 @@ export class LoginComponent implements OnInit {
 	}
 
 	onSubmit(): void {
-		// console.log(this.form.value);
-
 		/* we use request for the const and in the dispatch because registerAction
 		is looking for request as a property in the props when we created the action */
 		const request: LoginRequestInterface = {

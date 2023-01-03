@@ -1,11 +1,9 @@
 import {Component, OnInit} from '@angular/core';
-import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
+import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {select, Store} from '@ngrx/store';
 import {Observable} from 'rxjs';
-import {AuthService} from '../../services/auth.services';
 import {registerAction} from '../../store/actions/register.action';
 import {isSubmittingSelector, validationErrorsSelector} from '../../store/selectors/selectors';
-import {CurrentUserInterface} from 'src/app/shared/types/currentUser.interface';
 import {RegisterRequestInterface} from '../../types/registerRequest.interface';
 import {BackendErrorsInterface} from '../../types/backendErrors.interface';
 
@@ -31,8 +29,6 @@ export class RegisterComponent implements OnInit {
 	}
 
 	onSubmit(): void {
-		// console.log(this.form.value);
-
 		/* we use request for the const and in the dispatch because registerAction
 		is looking for request as a property in the props when we created the action */
 		const request: RegisterRequestInterface = {
