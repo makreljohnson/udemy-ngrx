@@ -1,22 +1,22 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import {NgModule} from '@angular/core';
+import {CommonModule} from '@angular/common';
 import {RouterModule} from '@angular/router';
 import {FeedModule} from '@shared/modules/feed/feed.module';
 import {BannerModule} from '@shared/modules/banner/banner.module';
 import {PopularTagsModule} from '@shared/modules/popular-tags/popular-tags.module';
 import {FeedTogglerModule} from '@shared/modules/feed-toggler/feed-toggler.module';
-import {GlobalFeedComponent} from '@global-feed/components/global-feed/global-feed.component';
+import {YourFeedComponent} from '@shared/modules/your-feed/components/your-feed/your-feed.component';
 
 const routes = [
   {
-    path:'',
-    component: GlobalFeedComponent
+    path:'feed',
+    component: YourFeedComponent
   }
 ]
 
 @NgModule({
   declarations: [
-	  GlobalFeedComponent
+    YourFeedComponent
   ],
 	imports: [
 		CommonModule,
@@ -27,4 +27,4 @@ const routes = [
 		FeedTogglerModule,
 	]
 })
-export class GlobalFeedModule { }
+export class YourFeedModule { }

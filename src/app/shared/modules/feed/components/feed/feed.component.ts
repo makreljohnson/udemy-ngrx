@@ -1,9 +1,9 @@
 import {Component, Input, OnDestroy, OnInit} from '@angular/core';
 import {select, Store} from '@ngrx/store';
-import {getFeedAction} from 'src/app/shared/modules/feed/store/actions/getFeed.action';
-import {GetFeedResponseInterface} from 'src/app/shared/modules/feed/types/getFeedResponse.interface';
+import {getFeedAction} from '@shared/modules/feed/store/actions/getFeed.action';
+import {GetFeedResponseInterface} from '@shared/modules/feed/types/getFeedResponse.interface';
 import {Observable, Subscription} from 'rxjs';
-import {errorSelector, feedSelector, isLoadingSelector} from 'src/app/shared/modules/feed/store/selectors/selectors';
+import {errorSelector, feedSelector, isLoadingSelector} from '@shared/modules/feed/store/selectors/selectors';
 import {environment} from 'src/environments/environment';
 import {ActivatedRoute, Params, Router} from '@angular/router';
 import queryString from 'query-string';

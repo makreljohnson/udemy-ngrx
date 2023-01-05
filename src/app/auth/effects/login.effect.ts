@@ -2,11 +2,11 @@ import {Injectable} from '@angular/core';
 import {Router} from '@angular/router';
 import {Actions, createEffect, ofType} from '@ngrx/effects';
 import {catchError, of, switchMap, map, tap} from 'rxjs';
-import {CurrentUserInterface} from 'src/app/shared/types/currentUser.interface';
-import {AuthService} from 'src/app/auth/services/auth.services';
+import {CurrentUserInterface} from '@shared/types/currentUser.interface';
+import {AuthService} from '@auth/services/auth.services';
 import {HttpErrorResponse} from '@angular/common/http';
-import {PersistenceService} from 'src/app/shared/services/persistence.service';
-import {loginAction, loginFailureAction, loginSuccessAction} from 'src/app/auth/store/actions/login.action';
+import {PersistenceService} from '@shared/services/persistence.service';
+import {loginAction, loginFailureAction, loginSuccessAction} from '@auth/store/actions/login.action';
 
 /* HEY - don't forget to register this in the module! */
 @Injectable()

@@ -1,9 +1,9 @@
 import {Injectable} from '@angular/core';
 import {map, Observable} from 'rxjs';
-import {PopularTagType} from 'src/app/shared/types/popularTag.type';
+import {PopularTagType} from '@shared/types/popularTag.type';
 import {HttpClient} from '@angular/common/http';
 import {environment} from 'src/environments/environment';
-import {GetPopularTagsResponseInterface} from 'src/app/shared/modules/popular-tags/types/getPopularTagsResponse.interface';
+import {GetPopularTagsResponseInterface} from '@shared/modules/popular-tags/types/getPopularTagsResponse.interface';
 
 @Injectable({
 	providedIn: 'root'

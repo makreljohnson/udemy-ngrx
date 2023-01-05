@@ -1,13 +1,13 @@
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
-import {PopularTagsComponent} from 'src/app/shared/modules/popular-tags/components/popular-tags/popular-tags.component';
-import {PopularTagsService} from 'src/app/shared/modules/popular-tags/services/popular-tags.service';
+import {PopularTagsComponent} from '@shared/modules/popular-tags/components/popular-tags/popular-tags.component';
+import {PopularTagsService} from '@shared/modules/popular-tags/services/popular-tags.service';
 import {StoreModule} from '@ngrx/store';
-import {popularTagsReducer} from 'src/app/shared/modules/popular-tags/store/reducers/getPopularFeed.reducer';
+import {popularTagsReducer} from '@shared/modules/popular-tags/store/reducers/getPopularFeed.reducer';
 import {EffectsModule} from '@ngrx/effects';
-import {GetPopularTagsEffect} from 'src/app/shared/modules/popular-tags/store/effects/getPopularTags.effects';
-import {LoadingModule} from 'src/app/shared/modules/loading/loading.module';
-import {ErrorMessageModule} from 'src/app/shared/modules/errorMessage/errorMessage.module';
+import {GetPopularTagsEffect} from '@shared/modules/popular-tags/store/effects/getPopularTags.effects';
+import {LoadingModule} from '@shared/modules/loading/loading.module';
+import {ErrorMessageModule} from '@shared/modules/errorMessage/errorMessage.module';
 import {RouterModule} from '@angular/router';
 
 

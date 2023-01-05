@@ -1,9 +1,9 @@
 import {Component, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
 import {Observable} from 'rxjs';
-import {CurrentUserInterface} from 'src/app/shared/types/currentUser.interface';
+import {CurrentUserInterface} from '@shared/types/currentUser.interface';
 import {select, Store} from '@ngrx/store';
-import {currentUserSelector, isAnonymousSelector, isLoggedInSelector} from 'src/app/auth/store/selectors/selectors';
+import {currentUserSelector, isAnonymousSelector, isLoggedInSelector} from '@auth/store/selectors/selectors';
 
 @Component({
 	selector: 'mc-top-bar',

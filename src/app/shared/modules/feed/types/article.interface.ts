@@ -1,4 +1,4 @@
-import {ProfileInterface} from 'src/app/shared/types/profile.Interface';
+import {ProfileInterface} from '@shared/types/profile.Interface';
 
 export interface ArticleInterface {
 	slug: string,

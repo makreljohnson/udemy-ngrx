@@ -1,10 +1,10 @@
 import {Component, OnInit} from '@angular/core';
 import {select, Store} from '@ngrx/store';
-import {AppStateInterface} from 'src/app/auth/types/appState.interface';
-import {getPopularTagsAction} from 'src/app/shared/modules/popular-tags/store/actions/getPopularTags.action';
+import {AppStateInterface} from '@auth/types/appState.interface';
+import {getPopularTagsAction} from '@shared/modules/popular-tags/store/actions/getPopularTags.action';
 import {Observable} from 'rxjs';
-import {PopularTagType} from 'src/app/shared/types/popularTag.type';
-import {errorSelector, isLoadingSelector, popularTagsSelector} from 'src/app/shared/modules/popular-tags/store/selectors/selectors';
+import {PopularTagType} from '@shared/types/popularTag.type';
+import {errorSelector, isLoadingSelector, popularTagsSelector} from '@shared/modules/popular-tags/store/selectors/selectors';
 
 @Component({
 	selector: 'mc-popular-tags',

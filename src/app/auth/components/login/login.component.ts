@@ -1,11 +1,11 @@
 import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {Observable} from 'rxjs';
-import {BackendErrorsInterface} from 'src/app/auth/types/backendErrors.interface';
+import {BackendErrorsInterface} from '@auth/types/backendErrors.interface';
 import {select, Store} from '@ngrx/store';
-import {isSubmittingSelector, validationErrorsSelector} from 'src/app/auth/store/selectors/selectors';
-import {loginAction} from 'src/app/auth/store/actions/login.action';
-import {LoginRequestInterface} from 'src/app/auth/types/loginRequest.interface';
+import {isSubmittingSelector, validationErrorsSelector} from '@auth/store/selectors/selectors';
+import {loginAction} from '@auth/store/actions/login.action';
+import {LoginRequestInterface} from '@auth/types/loginRequest.interface';
 
 @Component({
 	selector: 'mc-login',

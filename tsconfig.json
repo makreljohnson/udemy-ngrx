@@ -21,15 +21,48 @@
 	"lib": [
 	  "es2020",
 	  "dom"
-	]
-  },
-  "paths": {
-	"@environments/*": [
-	  "./src/environments/*"
 	],
-	"@shared/*": [
-	  "./src/app/shared/*"
-	]
+	"paths": {
+	  "@environments/*": [
+		"./src/environments/*"
+	  ],
+	  "@auth/*": [
+		"./src/app/auth/*"
+	  ],
+	  "@shared/*": [
+		"./src/app/shared/*"
+	  ],
+	  "@popular-tags/*": [
+		"./src/app/shared/modules/popular-tags/*"
+	  ],
+	  "@backend-error-messages/*": [
+		"./src/app/shared/modules/backend-error-messages/*"
+	  ],
+	  "@banner/*": [
+		"./src/app/shared/modules/banner/*"
+	  ],
+	  "@error-message/*": [
+		"./src/app/shared/modules/errorMessage/*"
+	  ],
+	  "@feed/*": [
+		"./src/app/shared/modules/feed/*"
+	  ],
+	  "@global-feed/*": [
+		"./src/app/shared/modules/global-feed/*"
+	  ],
+	  "@loading/*": [
+		"./src/app/shared/modules/loading/*"
+	  ],
+	  "@pager/*": [
+		"./src/app/shared/modules/pager/*"
+	  ],
+	  "@tag-list/*": [
+		"./src/app/shared/modules/tag-list/*"
+	  ],
+	  "@top-bar/*": [
+		"./src/app/shared/modules/top-bar/*"
+	  ]
+	}
   },
   "angularCompilerOptions": {
 	"enableI18nLegacyMessageIdFormat": false,
