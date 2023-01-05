@@ -2,7 +2,7 @@ import {AuthStateInterface} from 'src/app/auth/types/authState.interface';
 import {createReducer, on} from '@ngrx/store';
 import {registerAction, registerFailureAction, registerSuccessAction} from 'src/app/auth/store/actions/register.action';
 import {loginAction, loginFailureAction, loginSuccessAction} from 'src/app/auth/store/actions/login.action';
-import {getCurrentUserAction, getCurrentUserFailureAction, getCurrentUserSuccessAction} from '../actions/getCurrentuser.action';
+import {getCurrentUserAction, getCurrentUserFailureAction, getCurrentUserSuccessAction} from 'src/app/auth/store/actions/getCurrentuser.action';
 
 const initialState: AuthStateInterface = {
 	isSubmitting: false,

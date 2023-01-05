@@ -1,6 +1,6 @@
 import {PopularTagsStateInterface} from 'src/app/shared/modules/popular-tags/types/popularTags.interface';
 import {createReducer, on} from '@ngrx/store';
-import {getPopularTagsAction, getPopularTagsFailureAction, getPopularTagsSuccessAction} from '../actions/getPopularTags.action';
+import {getPopularTagsAction, getPopularTagsFailureAction, getPopularTagsSuccessAction} from 'src/app/shared/modules/popular-tags/store/actions/getPopularTags.action';
 
 const initialState: PopularTagsStateInterface = {
 	isLoading: false,
