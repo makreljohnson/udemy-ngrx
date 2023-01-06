@@ -9,11 +9,10 @@ import {ActivatedRoute, Params, Router} from '@angular/router';
 import queryString from 'query-string';
 
 @Component({
-	selector: 'mc-feed',
-	templateUrl: './feed.component.html',
-	styleUrls: ['./feed.component.scss']
+	selector: 'mc-article',
+	templateUrl: './article.component.html'
 })
-export class FeedComponent implements OnInit, OnDestroy {
+export class ArticleComponent implements OnInit, OnDestroy {
 	@Input('apiUrl') apiUrlProps: string;
 
 	feed$: Observable<GetFeedResponseInterface | null>;

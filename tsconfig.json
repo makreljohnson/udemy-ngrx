@@ -29,6 +29,9 @@
 	  "@auth/*": [
 		"./src/app/auth/*"
 	  ],
+	  "@article/*": [
+		"./src/app/article/*"
+	  ],
 	  "@shared/*": [
 		"./src/app/shared/*"
 	  ],

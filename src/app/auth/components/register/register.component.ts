@@ -2,10 +2,10 @@ import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {select, Store} from '@ngrx/store';
 import {Observable} from 'rxjs';
-import {registerAction} from '@auth/store/actions/register.action';
-import {isSubmittingSelector, validationErrorsSelector} from '@auth/store/selectors/selectors';
+import {registerAction} from '@auth/store/register.action';
+import {isSubmittingSelector, validationErrorsSelector} from '@auth/store/selectors';
 import {RegisterRequestInterface} from '@auth/types/registerRequest.interface';
-import {BackendErrorsInterface} from '@auth/types/backendErrors.interface';
+import {BackendErrorsInterface} from '@shared/types/backendErrors.interface';
 
 @Component({
 	selector: 'mc-register-component',

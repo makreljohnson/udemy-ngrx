@@ -4,7 +4,7 @@ import {RegisterComponent} from '@auth/components/register/register.component';
 import {RouterModule} from '@angular/router';
 import {ReactiveFormsModule} from '@angular/forms';
 import {StoreModule} from '@ngrx/store';
-import {authReducer} from '@auth/store/reducers/auth.reducers';
+import {authReducer} from '@auth/store/auth.reducers';
 import {AuthService} from '@auth/services/auth.services';
 import {HttpClientModule} from '@angular/common/http';
 import {EffectsModule} from '@ngrx/effects';

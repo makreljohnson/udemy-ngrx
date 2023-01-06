@@ -1,6 +1,6 @@
-import {FeedStateInterface} from '@shared/modules/feed/types/feedsState.interface';
+import {FeedStateInterface} from '@feed/types/feedsState.interface';
 import {createReducer, on} from '@ngrx/store';
-import {getFeedAction, getFeedFailureAction, getFeedSuccessAction} from '@shared/modules/feed/store/actions/getFeed.action';
+import {getFeedAction, getFeedFailureAction, getFeedSuccessAction} from '@feed/store/getFeed.action';
 import {routerNavigationAction} from '@ngrx/router-store';
 
 const initialState: FeedStateInterface = {

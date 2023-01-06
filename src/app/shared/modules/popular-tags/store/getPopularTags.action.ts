@@ -1,5 +1,5 @@
 import {createAction, props} from '@ngrx/store';
-import {ActionTypes} from '@shared/modules/popular-tags/store/actionTypes/actionTypes';
+import {ActionTypes} from '@popular-tags/store/actionTypes';
 import {PopularTagType} from '@shared/types/popularTag.type';
 
 /*no props here because the URL is static in the service */

@@ -4,7 +4,7 @@ import {catchError, map, of, switchMap} from 'rxjs';
 import {CurrentUserInterface} from '@shared/types/currentUser.interface';
 import {AuthService} from '@auth/services/auth.services';
 import {HttpErrorResponse} from '@angular/common/http';
-import {getCurrentUserAction, getCurrentUserFailureAction, getCurrentUserSuccessAction} from '@auth/store/actions/getCurrentuser.action';
+import {getCurrentUserAction, getCurrentUserFailureAction, getCurrentUserSuccessAction} from '@auth/store/getCurrentuser.action';
 import {PersistenceService} from '@shared/services/persistence.service';
 
 /* HEY - don't forget to register this in the module! */

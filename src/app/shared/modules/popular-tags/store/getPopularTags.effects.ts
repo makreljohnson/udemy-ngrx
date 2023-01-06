@@ -1,8 +1,8 @@
 import {Injectable} from '@angular/core';
 import {Actions, createEffect, ofType} from '@ngrx/effects';
 import {catchError, map, of, switchMap} from 'rxjs';
-import {PopularTagsService} from '@shared/modules/popular-tags/services/popular-tags.service';
-import {getPopularTagsAction, getPopularTagsFailureAction, getPopularTagsSuccessAction} from '@shared/modules/popular-tags/store/actions/getPopularTags.action';
+import {PopularTagsService} from '@popular-tags/services/popular-tags.service';
+import {getPopularTagsAction, getPopularTagsFailureAction, getPopularTagsSuccessAction} from '@popular-tags/store/getPopularTags.action';
 import {PopularTagType} from '@shared/types/popularTag.type';
 
 /* HEY - don't forget to register this in the module! */

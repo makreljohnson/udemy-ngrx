@@ -6,7 +6,7 @@ import {CurrentUserInterface} from '@shared/types/currentUser.interface';
 import {AuthService} from '@auth/services/auth.services';
 import {HttpErrorResponse} from '@angular/common/http';
 import {PersistenceService} from '@shared/services/persistence.service';
-import {loginAction, loginFailureAction, loginSuccessAction} from '@auth/store/actions/login.action';
+import {loginAction, loginFailureAction, loginSuccessAction} from '@auth/store/login.action';
 
 /* HEY - don't forget to register this in the module! */
 @Injectable()

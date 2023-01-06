@@ -1,5 +1,5 @@
 import {createFeatureSelector, createSelector} from '@ngrx/store';
-import {AppStateInterface} from '@auth/types/appState.interface';
+import {AppStateInterface} from '@shared/types/appState.interface';
 import {PopularTagsStateInterface} from '@popular-tags/types/popularTags.interface';
 
 export const popularTagsFeatureSelector = createFeatureSelector<
