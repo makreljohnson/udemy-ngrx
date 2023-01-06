@@ -15,6 +15,7 @@ import {GlobalFeedModule} from '@shared/modules/global-feed/global-feed.module';
 import {routerReducer, StoreRouterConnectingModule} from '@ngrx/router-store';
 import {YourFeedModule} from '@shared/modules/your-feed/your-feed.module';
 import {TagFeedModule} from '@shared/modules/tag-feed/tag-feed.module';
+import {ArticleModule} from '@article/article.module';
 
 @NgModule({
 	declarations: [
@@ -27,6 +28,7 @@ import {TagFeedModule} from '@shared/modules/tag-feed/tag-feed.module';
 		TopBarModule,
 		GlobalFeedModule,
 		TagFeedModule,
+		ArticleModule,
 		YourFeedModule,
 		StoreModule.forRoot({router: routerReducer}, {}),
 		StoreDevtoolsModule.instrument({maxAge: 25, logOnly: environment.production}),
