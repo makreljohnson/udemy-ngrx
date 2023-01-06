@@ -17,8 +17,10 @@ export class ArticleComponent implements OnInit, OnDestroy {
 	slug: string;
 	article: ArticleInterface;
 	articleSubscription: Subscription;
-	/* when you need a lot of props from a var,
-	subscribe and don't use a stream w/ | async */
+	/*  NOTE:
+* when you need a lot of props from a var,
+* subscribe and don't use a stream w/ | async
+* */
 
 	error$: Observable<string | null>; /*from ArticleStateInterface*/
 	isLoading$: Observable<boolean>; /*from ArticleStateInterface*/
@@ -38,8 +40,10 @@ export class ArticleComponent implements OnInit, OnDestroy {
 		this.isLoading$ = this.store.pipe(select(isLoadingSelector));
 		this.error$ = this.store.pipe(select(errorSelector));
 
-		/*here we need a combineLatest to get both the article
-		and author data together and compare values */
+		/* NOTE:
+		here we need a combineLatest to get both the article
+		and author data together and compare values
+		*/
 		this.isAuthor$ = combineLatest(
 			this.store.pipe(select(articleSelector)),
 			this.store.pipe(select(currentUserSelector))

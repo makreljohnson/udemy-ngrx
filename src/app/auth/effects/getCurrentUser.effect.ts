@@ -16,7 +16,7 @@ export class GetCurrentUserEffect {
 			switchMap(() => {
 				const token = this.percyService.get('accessToken');
 
-				/* if this fails return failure and stop processing */
+				/* NOTE:  if this fails return failure and stop processing */
 				if (!token) {
 					return of(getCurrentUserFailureAction());
 				}
@@ -26,7 +26,7 @@ export class GetCurrentUserEffect {
 						return getCurrentUserSuccessAction({currentUser});
 					}),
 					catchError((errorResponse: HttpErrorResponse) => {
-						/*	note: you need to use of() in catchError
+						/* NOTE: you need to use of() in catchError
 						because inside a map is non-observable territory */
 						return of(getCurrentUserFailureAction());
 

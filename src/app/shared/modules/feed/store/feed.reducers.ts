@@ -33,8 +33,7 @@ export const feedReducer = createReducer(
 			isLoading: false
 		})
 	), on(
-		/*
-		During navigation, before any guards or resolvers run,
+		/* NOTE: During navigation, before any guards or resolvers run,
 		the router will dispatch a ROUTER_NAVIGATION action.
 		https://ngrx.io/guide/router-store/actions
 

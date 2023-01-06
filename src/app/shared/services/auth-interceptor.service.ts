@@ -12,7 +12,7 @@ export class AuthInterceptorService implements HttpInterceptor {
 	intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
 		const token = this.percySvc.get('accessToken');
 
-		/* clone the request and add headers to it */
+		/* NOTE: clone the request and add headers to it */
 		request = request.clone({
 			setHeaders: {
 				authorization: token ? `Token ${token}` : ''

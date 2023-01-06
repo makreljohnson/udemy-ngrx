@@ -7,7 +7,7 @@ import {PopularTagType} from '@shared/types/popularTag.type';
 	styleUrls: ['./tag-list.component.scss']
 })
 export class TagListComponent implements OnInit {
-	/*using a type (PopularTagType) here helps when using the component multiple places */
+	/* NOTE: using a type (PopularTagType) here helps when using the component multiple places */
 	@Input('tags') tagsProps: PopularTagType[];
 
 	constructor() {

@@ -25,7 +25,7 @@ export class AuthService {
 
 	register(data: RegisterRequestInterface): Observable<CurrentUserInterface> {
 		const url = environment.apiUrl + '/users';
-		/* post is a type AuthResponseInterface to restrict to known properties
+		/*  NOTE: post is typed AuthResponseInterface to restrict to known properties
 		pipe to return a distilled observable of a CurrentUserInterface */
 		return this.http.post<AuthResponseInterface>(url, data).pipe(
 			map(this.getUserFromResponse)

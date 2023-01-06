@@ -13,10 +13,9 @@ import {BackendErrorMessagesComponent} from './components/backEndErrorMessages/b
 		CommonModule
 	]
 })
-/*
-* By re-exporting BackendErrorMessagesComponent, any other
+/* NOTE: By re-exporting BackendErrorMessagesComponent, any other
 * module that imports this SharedModule, gets access.
 * Not doing this caused error with mc-backend-error-messages Input prop
-* */
+*/
 export class BackendErrorMessagesModule {
 }

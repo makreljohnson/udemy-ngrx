@@ -15,7 +15,7 @@ export class GetFeedEffect {
 		this.actions$.pipe(
 			ofType(getFeedAction),
 			switchMap(({url}) => {
-				/*note: url is projected from the action props */
+				/* NOTE: url is projected from the action props */
 				return this.feedSVC.getFeed(url).pipe(
 					map((feed: GetFeedResponseInterface) => {
 						return getFeedSuccessAction({feed});

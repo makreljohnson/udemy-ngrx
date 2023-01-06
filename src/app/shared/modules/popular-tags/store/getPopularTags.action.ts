@@ -2,7 +2,7 @@ import {createAction, props} from '@ngrx/store';
 import {ActionTypes} from '@popular-tags/store/actionTypes';
 import {PopularTagType} from '@shared/types/popularTag.type';
 
-/*no props here because the URL is static in the service */
+/* NOTE: no props here because the URL is static in the service */
 export const getPopularTagsAction = createAction(
 	ActionTypes.GET_POPULAR_TAGS
 )

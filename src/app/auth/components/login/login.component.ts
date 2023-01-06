@@ -29,7 +29,7 @@ export class LoginComponent implements OnInit {
 	}
 
 	onSubmit(): void {
-		/* we use request for the const and in the dispatch because registerAction
+		/*  NOTE: we use request for the const and in the dispatch because registerAction
 		is looking for request as a property in the props when we created the action */
 		const request: LoginRequestInterface = {
 			user: this.form.value
@@ -47,7 +47,7 @@ export class LoginComponent implements OnInit {
 	}
 
 	initializeValues(): void {
-		/*
+		/*  NOTE:
 		pipe: why - allows multiple functions to process on the store returning the processed value (withour modifying the state)
 		select: why - it's a built-in store function for getting the bit of state you want: select([MYSELECTOR]])
 		pipe is also good for tree shaking

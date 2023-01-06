@@ -7,8 +7,6 @@ import {BackendErrorsInterface} from '@shared/types/backendErrors.interface';
 	styleUrls: ['./backend-error-messages.component.scss']
 })
 export class BackendErrorMessagesComponent implements OnInit {
-	/* @Input('inputPropertyName') AliasForLocalComponent
-	* <my-comp-thing [backendErrors]="backendErrors$|async"> */
 	@Input('backendErrors') backendErrorsProps: BackendErrorsInterface;
 	errorMessages: string[];
 

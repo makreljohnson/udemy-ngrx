@@ -13,7 +13,7 @@ const initialState: AuthStateInterface = {
 };
 
 /*
-* initialState - Provides a state value if the current state is undefined, as it is initially.
+*  NOTE: initialState - Provides a state value if the current state is undefined, as it is initially.
 * on(
 		featureActions.actionOne,
 		featureActions.actionTwo,
@@ -99,12 +99,12 @@ export const authReducer = createReducer(
 	)
 );
 /*
-* NOTE - to get access to the action payload, you need to add action to the incoming data,
+* NOTE:  to get access to the action payload, you need to add action to the incoming data,
 * right where state is brought in, THEREFORE (state) becomes (state, action)
 */
 
 /*
-* Note: The exported reducer function is no longer required if you use the default
+*  NOTE: The exported reducer function is no longer required if you use the default
 * Ivy AOT compiler (or JIT). It is only necessary with the View Engine AOT compiler
 * as function calls are not supported there.
 

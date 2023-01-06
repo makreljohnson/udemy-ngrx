@@ -26,8 +26,10 @@ const routes = [
 	}
 ];
 
-/*RouterModule.forChild(routes) lets us compartmentalize the auth module
-and pass routes up to the app-routing-module */
+/* NOTE:
+* RouterModule.forChild(routes) lets us compartmentalize the auth module
+* and pass routes up to the app-routing-module
+* */
 @NgModule({
 	imports: [
 		CommonModule,

@@ -21,7 +21,7 @@ export class GetPopularTagsEffect {
 					map((popularTags: PopularTagType[]) => {
 
 						return getPopularTagsSuccessAction({popularTags});
-						/* REMEMBER: the action props is the same [name] as
+						/* NOTE: the action props is the same [name] as
 							return getPopularTagsSuccessAction({[name]})/
 						 */
 					}),

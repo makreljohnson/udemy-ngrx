@@ -48,7 +48,7 @@ export class RegisterComponent implements OnInit {
 	}
 
 	initializeValues(): void {
-		/* 
+		/*  NOTE:
 		pipe: why - allows multiple functions to process on the store returning the processed value (withour modifying the state)
 		select: why - it's a built-in store function for getting the bit of state you want: select([MYSELECTOR]])
 		pipe is also good for tree shaking

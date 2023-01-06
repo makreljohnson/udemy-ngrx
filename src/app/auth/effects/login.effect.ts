@@ -18,11 +18,11 @@ export class LoginEffect {
 				return this.authService.login(request).pipe(
 					map((currentUser: CurrentUserInterface) => {
 						this.persistenceSvc.set('accessToken', currentUser.token);
-						/* store token for local storage? No - not all that safe. */
+						/* store token for local storage? No - not best practice. */
 						return loginSuccessAction({currentUser});
 					}),
 					catchError((errorResponse: HttpErrorResponse) => {
-						/*	note: you need to use of() in catchError
+						/* NOTE: you need to use of() in catchError
 						because inside a map is non-observable territory */
 						return of(loginFailureAction({errors: errorResponse.error.errors}));
 					})
@@ -39,7 +39,7 @@ export class LoginEffect {
 					this.router.navigateByUrl('/');
 				})
 			),
-		/* options - {dispatch: false} means don't trigger a dispatch and create endless loop */
+		/*  NOTE:  {dispatch: false} means don't trigger a dispatch and create endless loop */
 		{dispatch: false}
 	);
 

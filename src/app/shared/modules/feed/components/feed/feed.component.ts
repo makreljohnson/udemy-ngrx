@@ -28,9 +28,6 @@ export class FeedComponent implements OnInit, OnDestroy {
 	}
 
 	ngOnInit(): void {
-		/*this.store.dispatch(
-			getFeedAction({url: this.apiUrlProps})
-		);*/
 		this.initializeValues();
 		this.initializeListeners();
 		this.fetchFeed();
@@ -46,7 +43,7 @@ export class FeedComponent implements OnInit, OnDestroy {
 	}
 
 	initializeListeners(): void {
-		/*Note: a queryParamsSub variable is created so that it can be
+		/* NOTE: a queryParamsSub variable is created so that it can be
 		unsubscribed. when accessed in the template with async, it un-subs automatically */
 		this.queryParamsSub = this.route.queryParams.subscribe(
 			(params: Params) => {
@@ -58,7 +55,7 @@ export class FeedComponent implements OnInit, OnDestroy {
 
 
 	fetchFeed(): void {
-		/* 1*10-10 = 0 and 2*10-10 = 10 and so on... */
+		/* NOTE: 1*10-10 = 0 and 2*10-10 = 10 and so on... */
 		const offset = this.currentPage * this.limit - this.limit;
 		const parsedURL = queryString.parseUrl(this.apiUrlProps);
 		const stringifiedParams = queryString.stringify({

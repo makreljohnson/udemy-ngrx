@@ -40,7 +40,7 @@ export class DeleteArticleEffect {
 					this.router.navigateByUrl('/');
 				})
 			),
-		/* options - dispatch false means don't dispatch and create endless loop */
+		/*  NOTE: dispatch false means don't dispatch and create endless loop */
 		{dispatch: false}
 	);
 }

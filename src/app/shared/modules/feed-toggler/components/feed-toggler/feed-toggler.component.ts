@@ -20,7 +20,7 @@ export class FeedTogglerComponent implements OnInit {
 	}
 
 	initializeValues() {
-		/* the way to grab data from the global store - simple as that */
+		/* NOTE: the way to grab data from the global store - simple as that */
 		this.isLoggedIn$ = this.store.pipe(select(isLoggedInSelector));
 	}
 

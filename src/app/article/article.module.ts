@@ -19,7 +19,9 @@ const routes = [
 		component: ArticleComponent
 	}
 ];
-/* "cannot match any routes" - check that it's registered in the app-module? */
+/*  NOTE:
+* "cannot match any routes" - check that it's registered in the app-module?
+* */
 
 @NgModule({
 	declarations: [

@@ -1,4 +1,4 @@
-/*using enum vs const gets you a unique key-check in case your enum is large */
+/* NOTE: using enum vs const gets you a unique key-check in case your enum is large */
 
 export enum ActionTypes {
 	REGISTER = '[Auth] Register',

@@ -8,7 +8,7 @@ export const registerAction = createAction(
 	ActionTypes.REGISTER,
 	props<{ request: RegisterRequestInterface }>()
 );
-/* request is there to inform that it's a request (http)
+/* NOTE:  request is there to inform that it's a request (http)
 * Oleksandr — Instructor
 * Hi Seeschon, I'm using props aliases as I want to see when it's an
 * input and not a local property. If you want object or array and mutate
