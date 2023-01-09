@@ -4,6 +4,7 @@ import {CreateArticleComponent} from './components/create-article.component';
 import {RouterModule} from '@angular/router';
 import {ArticleModule} from '@article/article.module';
 import {ArticleFormModule} from '@shared/modules/articleForm/article-form.module';
+import {CreateArticleService} from './services/create-article.service';
 
 /* NOTE: ROUTER ALERT!
 * IMPORT THIS MODULE BEFORE SHARED ARTICLE MODULE IN APP.MODULE
@@ -26,13 +27,14 @@ const routes = [
 	imports: [
 		CommonModule,
 		RouterModule.forChild(routes),
-		ArticleModule,
 		ArticleFormModule,
 	],
 	exports: [
 		CreateArticleComponent
 	],
-	providers: []
+	providers: [
+		CreateArticleService
+	]
 })
 export class CreateArticleModule {
 }

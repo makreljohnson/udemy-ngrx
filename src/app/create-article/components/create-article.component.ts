@@ -1,15 +1,25 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 
 @Component({
-  selector: 'app-create-article',
-  templateUrl: './create-article.component.html',
-  styleUrls: ['./create-article.component.scss']
+	selector: 'mc-create-article',
+	templateUrl: './create-article.component.html',
+	styleUrls: ['./create-article.component.scss']
 })
 export class CreateArticleComponent implements OnInit {
+	initialValues = {
+		title: 'Foo',
+		description: 'Bar',
+		body: 'baz',
+		tagList: ['zim', 'dib', 'gaz']
+	};
 
-  constructor() { }
+	constructor() {
+	}
 
-  ngOnInit(): void {
-  }
+	ngOnInit(): void {
+	}
 
+	onSubmit(event: any) {
+		console.log('event:', event);
+	}
 }
