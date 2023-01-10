@@ -5,6 +5,10 @@ import {RouterModule} from '@angular/router';
 import {ArticleModule} from '@article/article.module';
 import {ArticleFormModule} from '@shared/modules/articleForm/article-form.module';
 import {CreateArticleService} from './services/create-article.service';
+import {EffectsModule} from '@ngrx/effects';
+import {CreateArticleEffect} from '@createArticle/store/create-article.effect';
+import {StoreModule} from '@ngrx/store';
+import {createArticleReducer} from '@createArticle/store/create-article.reducer';
 
 /* NOTE: ROUTER ALERT!
 * IMPORT THIS MODULE BEFORE SHARED ARTICLE MODULE IN APP.MODULE
@@ -27,6 +31,8 @@ const routes = [
 	imports: [
 		CommonModule,
 		RouterModule.forChild(routes),
+		EffectsModule.forFeature([CreateArticleEffect]),
+		StoreModule.forFeature('createArticle', createArticleReducer),
 		ArticleFormModule,
 	],
 	exports: [

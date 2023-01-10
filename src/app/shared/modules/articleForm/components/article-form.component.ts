@@ -28,7 +28,7 @@ export class ArticleFormComponent implements OnInit {
 		this.initializeForm();
 	}
 
-	initializeForm() {
+	initializeForm(): void {
 		this.form = this.fb.group({
 			title: this.initialValuesProps.title,
 			description: this.initialValuesProps.description,

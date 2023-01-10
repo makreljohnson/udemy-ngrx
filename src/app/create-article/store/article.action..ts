@@ -14,7 +14,7 @@ export const createArticleSuccessAction = createAction(
 	props<{ article: ArticleInterface }>()
 );
 
-export const createArticleFailure = createAction(
+export const createArticleFailureAction = createAction(
 	ActionTypes.CREATE_ARTICLE_FAILURE,
 	props<{ errors: BackendErrorsInterface }>()
 );

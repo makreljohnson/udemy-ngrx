@@ -36,7 +36,6 @@ import {CreateArticleModule} from './create-article/create-article.module';
 		TagFeedModule,
 		CreateArticleModule,
 		ArticleModule,
-
 	],
 	providers: [
 		PersistenceService,

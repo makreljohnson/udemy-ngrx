@@ -32,6 +32,9 @@
 	  "@article/*": [
 		"./src/app/article/*"
 	  ],
+	  "@create-article/*": [
+		"./src/app/create-article/*"
+	  ],
 	  "@shared/*": [
 		"./src/app/shared/*"
 	  ],
