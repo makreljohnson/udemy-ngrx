@@ -3,7 +3,7 @@ import {Actions, createEffect, ofType} from '@ngrx/effects';
 import {catchError, map, of, switchMap} from 'rxjs';
 import {ArticleService} from '@shared/services/article.service';
 import {getArticleAction, getArticleFailureAction, getArticleSuccessAction} from './getArticle.action';
-import {ArticleInterface} from '@article/types/article.interface';
+import {ArticleInterface} from '@shared/types/article.interface';
 
 /* HEY - don't forget to register this in the module! */
 @Injectable()

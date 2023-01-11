@@ -35,6 +35,9 @@
 	  "@create-article/*": [
 		"./src/app/create-article/*"
 	  ],
+	  "@edit-article/*": [
+		"./src/app/edit-article/*"
+	  ],
 	  "@shared/*": [
 		"./src/app/shared/*"
 	  ],

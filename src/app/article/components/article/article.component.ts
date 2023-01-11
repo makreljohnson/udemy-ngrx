@@ -2,7 +2,7 @@ import {Component, OnDestroy, OnInit} from '@angular/core';
 import {select, Store} from '@ngrx/store';
 import {ActivatedRoute} from '@angular/router';
 import {getArticleAction} from '@article/store/getArticle.action';
-import {ArticleInterface} from '@article/types/article.interface';
+import {ArticleInterface} from '@shared/types/article.interface';
 import {combineLatest, map, Observable, Subscription} from 'rxjs';
 import {articleSelector, errorSelector, isLoadingSelector} from '@article/store/articleSelectors';
 import {currentUserSelector} from '@auth/store/selectors';

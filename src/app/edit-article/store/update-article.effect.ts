@@ -3,26 +3,26 @@ import {Router} from '@angular/router';
 import {Actions, createEffect, ofType} from '@ngrx/effects';
 import {catchError, map, of, switchMap, tap} from 'rxjs';
 import {HttpErrorResponse} from '@angular/common/http';
-import {CreateArticleService} from '@createArticle/services/create-article.service';
-import {createArticleAction, createArticleFailureAction, createArticleSuccessAction} from '@createArticle/store/article.action.';
 import {ArticleInterface} from '@shared/types/article.interface';
+import {updateArticleAction, updateArticleFailureAction, updateArticleSuccessAction} from '@edit-article/store/update-article.action.';
+import {EditArticleService} from '@edit-article/services/edit-article.service';
 
 /* HEY - don't forget to register this in the module! */
 @Injectable()
-export class CreateArticleEffect {
-	createArticle$ = createEffect(() =>
+export class UpdateArticleEffect {
+	updateArticle$ = createEffect(() =>
 		this.actions$.pipe(
-			ofType(createArticleAction),
-			switchMap(({articleInput}) => {
-				return this.createArticleSvc.createArticle(articleInput).pipe(
+			ofType(updateArticleAction),
+			switchMap(({slug, articleInput}) => {
+				return this.editArticleService.updateArticle(slug, articleInput).pipe(
 					map((article: ArticleInterface) => {
-						return createArticleSuccessAction({article});
+						return updateArticleSuccessAction({article});
 					}),
 					catchError((errorResponse: HttpErrorResponse) => {
 						/* NOTE: you need to use of() in catchError
 						because inside a map is non-observable territory */
 						return of(
-							createArticleFailureAction({errors: errorResponse.error.errors})
+							updateArticleFailureAction({errors: errorResponse.error.errors})
 						);
 					})
 				);
@@ -32,7 +32,7 @@ export class CreateArticleEffect {
 
 	redirectAfterCreate$ = createEffect(() =>
 			this.actions$.pipe(
-				ofType(createArticleSuccessAction),
+				ofType(updateArticleSuccessAction),
 				tap(({article}) => {
 					this.router.navigate(['/articles', article.slug]);
 				})
@@ -43,7 +43,7 @@ export class CreateArticleEffect {
 
 
 	constructor(private actions$: Actions,
-	            private createArticleSvc: CreateArticleService,
+	            private editArticleService: EditArticleService,
 	            private router: Router) {
 	}
 }
